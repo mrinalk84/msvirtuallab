@@ -1,0 +1,8 @@
+server:  port: 8085  
+spring:
+  application:
+    name: apigateway   
+  profiles:
+    active: dev      cloud:    gateway:      routes:      - id: productservice        uri: lb://productservice        predicates:        - Path=/product/**      - id: taxservice        uri: lb://taxservice        predicates:        - Path=/tax/**      - id: discountservice        uri: lb://discountservice        predicates:        - Path=/discount/**  sleuth:    sampler:      probability: 1.0    trace-id128: true       eureka:    client:      serviceUrl:        defaultZone: ${eureka.url:http://localhost:8090/eureka}    instance:      appname: ${spring.application.name}-${random.int}
+    
+    

@@ -1,0 +1,16 @@
+eureka:
+  instance:
+    instance-id: ${spring.application.name}:${random.int}
+    
+  client:
+    service-url:
+      defaultZone: ${eureka.url:http://localhost:8090/eureka}
+      
+      
+spring:  rabbitmq:    host: ${rabbitmq.host:192.168.99.100}
+    port: ${rabbitmq.port:5672}
+    username: guest
+    password: guest
+   
+    
+         

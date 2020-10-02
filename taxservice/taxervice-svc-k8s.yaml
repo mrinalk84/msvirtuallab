@@ -1,0 +1,19 @@
+--- 
+apiVersion: v1
+kind: Service
+metadata: 
+  labels: 
+    app: taxervice
+    version: v1
+  name: taxervice
+spec: 
+  ports: 
+    - 
+      name: http
+      port: 8100
+      targetPort: 8100
+
+  selector: 
+    app: taxervice
+    version: v1
+  type: NodePort

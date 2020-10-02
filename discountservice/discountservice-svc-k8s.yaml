@@ -1,0 +1,19 @@
+--- 
+apiVersion: v1
+kind: Service
+metadata: 
+  labels: 
+    app: discountservice
+    version: v1
+  name: discountservice
+spec: 
+  ports: 
+    - 
+      name: http
+      port: 8200
+      targetPort: 8200
+
+  selector: 
+    app: discountservice
+    version: v1
+  type: NodePort
